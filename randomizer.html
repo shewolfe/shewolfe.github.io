@@ -1,0 +1,94 @@
+<!-- /exercises/08-js-events.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Randomizer</title>
+
+    <style>
+      body {
+        background-color: #000;
+        text-align: center;
+        margin-top: 10%;
+        margin-left: 20%;
+      }
+
+      #interactive-div {
+        background: linear-gradient(#e66465, #9198e5);
+        position: relative;
+        width: 400px;
+        height: 400px;
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+      }
+
+      #hex {
+        color: #FFF;
+        font-size: 60pt;
+        font-family: sans-serif;
+      }
+
+      #click-text {
+        position: absolute;
+        color: white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="interactive-div">
+      <span id="click-text">
+        <span id="hex"></span>
+      </span>
+    </div>
+
+
+    <script>
+      // We want elem accessible to init() and any other functions below
+      let elem;
+      // window.onload = init; //not recommended
+
+      window.addEventListener('load', init);
+
+      function init() {
+        elem = document.getElementById('interactive-div');
+        elem.addEventListener('click', function() {
+          elem.style.background = 'linear-gradient('+getRandomDeg()+'deg, '+getRandomColor()+', '+getRandomColor()+')';
+          // elem.style.borderRadius = getRandomPercent()+'% '+getRandomPercent()+'% '+getRandomPercent()+'% '+getRandomPercent()+'% / '+getRandomPercent()+'% '+ getRandomPercent()+'% '+getRandomPercent()+'% '+getRandomPercent()+'% ';
+          elem.style.borderRadius = `${getRandomPercent()}% ${getRandomPercent()}% ${getRandomPercent()}% ${getRandomPercent()}%  / ${getRandomPercent()}% ${getRandomPercent()}% ${getRandomPercent()}% ${getRandomPercent()}%`;
+        });
+      }
+
+      // A nice utility function for generating random hex values
+      function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+
+        //let hexCode = document.getElementById("hex");
+        //hexCode.innerHTML = color;
+
+        return color;
+      }
+
+      function getRandomDeg() {
+        var deg = Math.floor(Math.random() * 360);
+        return deg;
+      }
+
+      function getRandomPercent() {
+        var percent = Math.ceil(Math.random() * 10);
+        if (percent < 2.5) {
+          percent = 25;
+        } else {
+          percent = percent*10;
+        }
+        return percent;
+      }
+
+    </script>
+  </body>
+</html>
