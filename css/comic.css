@@ -610,7 +610,7 @@ left: 90%;
 
 #moon {
   position: absolute;
-  top: 10%;
+  top: 30%;
   left: 10%;
   width: 200px;
   height: 200px;
@@ -620,6 +620,76 @@ left: 90%;
 }
 
 #saturn {
+  width: 20%;
+  //animation: spin 10s linear infinite;
+}
+
+#planet {
+  //border: 1px solid #FFF;
+  position: absolute;
+  left: 20%;
+  top: 10%;
+  width: 100px;
+  height: 66px;
+  transform: scale(1.5) rotate(-15deg);
+  -webkit-animation: planet-ani 1.5s ease-in-out 0s infinite alternate;
+  animation: planet-ani 1.5s ease-in-out 0s infinite alternate;
+}
+
+@keyframes planet-ani {
+  0% {
+    top: 10%;
+  }
+
+  100% {
+    top: 11%;
+  }
+}
+
+#saturn-planet {
+  position: absolute;
+  top: 5px;
+  left: 18px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+}
+
+#saturn-planet-top {
+  position: absolute;
+  top: 5px;
+  left: 18px;
+  width: 50px;
+  height: 25px;
+  border-radius: 50% 50% 50% 50% / 100% 100% 0% 0% ;
+  background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+}
+
+#saturn-rings {
+  position: absolute;
+  align: center;
+  top: 15px;
+  width: 75px;
+  height: 20px;
+  border-radius: 50%;
+  border: 5px solid #ff48e7;
+  border-width: 5px 10px;
+  -webkit-animation: rings-ani 1.5s ease-in-out 0s infinite alternate;
+  animation: rings-ani 1.5s ease-in-out 0s infinite alternate;
+}
+
+@keyframes rings-ani {
+  0% {
+    left: -10px;
+  }
+
+  100% {
+    left: 2px;
+  }
+}
+
+/* #saturn {
   width: 20%;
   animation: spin 10s linear infinite;
 }
@@ -660,7 +730,7 @@ left: 90%;
   border-radius: 50%;
   border: 5px solid #ff48e7;
   transform: rotate(-15deg);
-}
+} */
 
 #nebula {
   position: absolute;
