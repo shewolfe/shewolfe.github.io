@@ -1,0 +1,30 @@
+body {
+	font-family: "sabbath-black", Helvetica, sans-serif;
+	font-size: 52pt;
+	padding: 50px;
+	color: #ffffff;
+	background-color: #000000;
+	font-weight: 400;
+	line-height: 110%;
+	background-image: url('wolves.gif');
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+}
+
+
+#shewolfe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+a:hover {
+	opacity: 0.8;
+}
+
+.logo {
+	width: 400px;
+}
